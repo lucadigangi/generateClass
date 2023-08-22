@@ -29,7 +29,7 @@ def assign_classes(students, teachers, max_students_per_class):
         teacher = student['teacher_preferences'][0]
         class_num = 1 if len(class_assignments[teacher][1]) < max_students_per_class else 2
         class_assignments[teacher][class_num].append(student['name'])
-        if student['companion_preference'] in companions and student['name'] in companions[student['companion_preference']]:
+        if student['companion_preference'] in companions and isinstance(companions[student['companion_preference']], list):
             companions[student['companion_preference']].remove(student['name'])
 
     # Assign students without preferences
@@ -49,11 +49,18 @@ def assign_classes(students, teachers, max_students_per_class):
 
 #---- MAIN ----#
 
-teachers = ['carla', 'marta']
-file_path = "/content/sample_data/Cartel1.csv"  # Assicurati che il percorso sia corretto
-max_students_per_class = 5  # Modifica questo valore se necessario
+teachers = ['cucinella', 'asaro']
+file_path = "/content/sample_data/preferenze.csv"  # Assicurati che il percorso sia corretto
+max_students_per_class = 20  # Modifica questo valore se necessario
 
 # Run the algorithm
 students = generate_student_dictionary(file_path)
+
+# Remove companion preferences that are not in the list of students
+for student in students:
+    if student['companion_preference'] not in [s['name'] for s in students]:
+        student['companion_preference'] = ''
+
+# Assign classes
 class_assignments = assign_classes(students, teachers, max_students_per_class)
 print(class_assignments)
