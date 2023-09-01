@@ -1,7 +1,7 @@
 Genera Classi
 ======
 ### Architettura
-![immagine](https://github.com/lucadigangi/generateClass/assets/57185672/e3d42917-1240-45e6-b62a-2480b625109f)
+![immagine](https://github.com/lucadigangi/generateClass/assets/57185672/19a049e6-8609-450b-ad16-d3c911bf25f9)
 L'architettura è organizzata come segue:
 <ul>
 <li>Amazon Cognito: Configura Amazon Cognito per gestire l'autenticazione degli utenti. Cognito ti consente di creare pool di utenti, autenticare utenti tramite diverse opzioni (ad esempio, username/password, social login, ecc.) e assegnare ruoli e autorizzazioni ai tuoi utenti.</li>
