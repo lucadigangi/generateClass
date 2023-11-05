@@ -18,3 +18,5 @@ Launches the build.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### `aws s3 sync build/ s3://sort-student-bucket`
+
+Upload your build on aws s3 bucket
