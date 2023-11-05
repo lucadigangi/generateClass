@@ -1,0 +1,35 @@
+body {
+  background-image: url("../public/background.jpeg");
+  background-size:cover;
+}
+
+.container{
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  -ms-transform: translate(-40%, -50%);
+  transform: translate(-35%, -50%);
+}
+
+.title {
+  font-family: 'Amazon Ember', sans-serif;
+  font-size: 4em;
+  color: #ff9900;
+}
+
+.text {
+  font-family: 'Amazon Ember', sans-serif;
+  color: #f2f2f2;
+  font-size: 2em;
+  -webkit-text-stroke: 0.01em 	#000000;
+}
+
+.description {
+  font-family: 'Amazon Ember', sans-serif;
+  font-size: 1em;
+  color: #f2f2f2;
+  -webkit-text-stroke: 0.01em 	#000000;
+}
+
