@@ -1,23 +1,16 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-north-1"
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-unique-bucket-name"
-  acl    = "private"
+  bucket = "sort-student-bucket"
+  acl    = "public"
 }
 
 resource "aws_lambda_function" "my_lambda" {
-  function_name = "my-lambda-function"
-  handler       = "index.handler"
-  runtime       = "nodejs14.x"
+  function_name = "generateClasses"
+  handler       = "index.html"
+  runtime       = "Python 3.9"
 
   # ... altre opzioni specifiche per la tua Lambda function
-}
-
-resource "aws_api_gateway_rest_api" "my_api" {
-  name        = "my-api"
-  description = "My API"
-
-  # ... altre opzioni specifiche per il tuo API Gateway
 }
